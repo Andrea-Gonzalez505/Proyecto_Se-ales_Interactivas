@@ -1,0 +1,32 @@
+[build-system]
+requires = ["setuptools>=68.0"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "ecg-hrr-hrv-lab"
+version = "0.2.0"
+description = "Análisis de ECG filtrado, respuesta cronotrópica, HRR60/120 y VFC en caminadora vs. sentadillas (n=6)"
+readme = "README.md"
+requires-python = ">=3.10"
+dependencies = [
+    "numpy>=1.26.0",
+    "pandas>=2.1.0",
+    "scipy>=1.11.0",
+    "wfdb>=4.1.2",
+    "openpyxl>=3.1.2",
+    "matplotlib>=3.8.0",
+    "streamlit>=1.32.0",
+]
+
+[project.optional-dependencies]
+dev = [
+    "pytest>=8.0.0",
+]
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[dependency-groups]
+dev = [
+    "pytest>=9.2.0",
+]
